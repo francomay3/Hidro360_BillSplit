@@ -3,5 +3,4 @@
 cmake_minimum_required(VERSION 3.16)
 
 include($ENV{IDF_PATH}/tools/cmake/project.cmake)
-set(EXTRA_COMPONENT_DIRS components/esp32-ds18b20 components/esp32-owb)
 project(blink)
