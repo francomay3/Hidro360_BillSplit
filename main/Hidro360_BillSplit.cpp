@@ -1,6 +1,3 @@
-#include <stdio.h>
-#include <thread>
-
 // Local modules
 #include "utils/ds18b20_temperature_sensor.h"
 #include "utils/misc.h"

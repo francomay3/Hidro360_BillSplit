@@ -1,5 +1,4 @@
 #include "ds18b20_temperature_sensor.h"
-#include <stdio.h>
 
 Ds18b20TemperatureSensor::Ds18b20TemperatureSensor(gpio_num_t pin) : data_pin(pin), bus(nullptr), ds18b20(nullptr), sensor_found(false)
 {
