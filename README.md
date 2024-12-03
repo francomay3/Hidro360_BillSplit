@@ -3,15 +3,10 @@
 A personal learning project for exploring ESP32 capabilities, including:
 
 - DS18B20 temperature sensor integration
-- GPIO button handling
-- LED control and blinking patterns
 
 ## Features
 
 - Temperature reading using DS18B20 sensor
-- Button input with LED feedback
-- Periodic LED blinking demonstration
-- FreeRTOS task management
 
 ## Setup Requirements
 
@@ -19,14 +14,10 @@ A personal learning project for exploring ESP32 capabilities, including:
 - VS Code with ESP-IDF extension
 - ESP32 development board
 - DS18B20 temperature sensor
-- Push button and LEDs
 
 ## Hardware Connections
 
 - Temperature Sensor: GPIO 26
-- Button: GPIO 32
-- Button LED: GPIO 33
-- Blink LED: GPIO 25
 
 ## Building and Running
 
@@ -63,6 +54,34 @@ A personal learning project for exploring ESP32 capabilities, including:
 
 4. Exit monitor with `Ctrl+T` followed by `Ctrl+X`
 
+## Adding New Dependencies
+
+To add new source files to the project:
+
+1. Create header file in main folder:
+   ```bash
+   touch main/newFile.h
+   ```
+
+2. Create source file in main folder:
+   ```bash
+   touch main/newFile.cpp
+   ```
+
+3. Add the source file to `main/CMakeLists.txt`:
+   ```cmake
+   idf_component_register(
+       SRCS "main.cpp" "newFile.cpp"  # Add your new source file here
+       INCLUDE_DIRS "."
+   )
+   ```
+
+4. Include the header in your main entry file:
+   ```cpp
+   #include "newFile.h"
+   ```
+
 ## Project Status
 
 This is a learning sandbox for experimenting with ESP32 features and peripherals.
+

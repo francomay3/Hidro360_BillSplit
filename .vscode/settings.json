@@ -36,5 +36,7 @@
     "defaultColor": "white",
     "reloadButton": "↻",
     "loadNpmCommands": false
-  }
+  },
+  "editor.formatOnSave": true,
+  "editor.defaultFormatter": "ms-vscode.cpptools"
 }
