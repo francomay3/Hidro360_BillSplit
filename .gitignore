@@ -1,24 +1,9 @@
-.devcontainer
-.vscode
+# ESP-IDF generated files
 build
-# ESP-IDF specific
 sdkconfig
 sdkconfig.old
 dependencies.lock
 managed_components/
-
-# Build output
-build/
-
-# Generated files
-*.o
-*.pyc
-__pycache__/
-
-# IDE specific (in addition to .vscode already listed)
-.idea/
-*.swp
-*.swo
 
 # Debug files
 *.log
@@ -30,4 +15,3 @@ core
 # Temporary files
 .DS_Store
 Thumbs.db
-

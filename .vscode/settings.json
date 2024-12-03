@@ -1,0 +1,40 @@
+{
+  "idf.espIdfPath": "${env:HOME}/esp/esp-idf",
+  "idf.espIdfPathWin": "",
+  "idf.pythonBinPath": "${env:HOME}/.espressif/python_env/idf5.2_py3.13_env/bin/python",
+  "idf.toolsPath": "${env:HOME}/.espressif",
+  "idf.customExtraPaths": "${env:HOME}/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20230928/xtensa-esp-elf/bin:${env:HOME}/.espressif/tools/xtensa-esp32-elf/esp-13.2.0_20230928/xtensa-esp32-elf/bin:${env:HOME}/.espressif/tools/openocd-esp32/v0.12.0-esp32-20230921/openocd-esp32/bin:${env:HOME}/.espressif/tools/ninja/1.11.1",
+  "idf.customExtraVars": {
+    "OPENOCD_SCRIPTS": "${env:HOME}/.espressif/tools/openocd-esp32/v0.12.0-esp32-20230921/openocd-esp32/share/openocd/scripts",
+    "IDF_PYTHON_ENV_PATH": "${env:HOME}/.espressif/python_env/idf5.2_py3.13_env"
+  },
+  "idf.adapterTargetName": "esp32",
+  "idf.openOcdConfigs": [
+    "interface/ftdi/esp32_devkitj_v1.cfg",
+    "target/esp32.cfg"
+  ],
+  "idf.port": "/dev/cu.usbserial-0001",
+  "C_Cpp.intelliSenseEngine": "default",
+  "actionButtons": {
+    "commands": [
+      {
+        "name": "Get IDF",
+        "command": "get_idf",
+        "color": "red"
+      },
+      {
+        "name": "Build",
+        "command": "idf.py build",
+        "color": "blue"
+      },
+      {
+        "name": "Build & Flash",
+        "command": "idf.py -p /dev/cu.usbserial-0001 flash monitor",
+        "color": "green"
+      }
+    ],
+    "defaultColor": "white",
+    "reloadButton": "↻",
+    "loadNpmCommands": false
+  }
+}
