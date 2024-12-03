@@ -3,14 +3,10 @@
 
 // Local modules
 #include "utils/ds18b20_temperature_sensor.h"
+#include "utils/misc.h"
 
 // GPIO definitions
 constexpr gpio_num_t temp_sensor_gpio = GPIO_NUM_26;
-
-void delay(uint32_t milliseconds)
-{
-    std::this_thread::sleep_for(std::chrono::milliseconds(milliseconds));
-}
 
 extern "C" void app_main(void)
 {
