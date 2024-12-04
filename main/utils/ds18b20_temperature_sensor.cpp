@@ -1,5 +1,32 @@
 #include "ds18b20_temperature_sensor.h"
 
+/**
+ * @brief Class to interface with DS18B20 digital temperature sensor
+ *
+ * This class provides a simple interface to read temperature values from a DS18B20 sensor
+ * connected via 1-Wire bus. The sensor communicates over a single data pin and provides
+ * temperature readings in Celsius.
+ *
+ * The DS18B20 features:
+ * - Temperature measurements from -55°C to +125°C
+ * - ±0.5°C accuracy from -10°C to +85°C
+ * - 9-12 bit configurable resolution
+ * - 1-Wire interface requiring only one digital pin
+ *
+ * Wiring connections:
+ * - VDD (red wire): Connect to 3.3V or 5V
+ * - GND (black wire): Connect to ground
+ * - DATA (yellow/white wire): Connect to GPIO pin through a 4.7kΩ pullup resistor
+ *
+ * The 4.7kΩ pullup resistor must be connected between the DATA line and VDD.
+ *
+ * Example usage:
+ * @code
+ * Ds18b20TemperatureSensor sensor(GPIO_NUM_4);  // Initialize with GPIO pin 4
+ * float temp = sensor.readTemperatureC();       // Read temperature in Celsius
+ * @endcode
+ *
+ */
 Ds18b20TemperatureSensor::Ds18b20TemperatureSensor(gpio_num_t pin) : data_pin(pin), bus(nullptr), ds18b20(nullptr), sensor_found(false)
 {
   // Configure one-wire bus
