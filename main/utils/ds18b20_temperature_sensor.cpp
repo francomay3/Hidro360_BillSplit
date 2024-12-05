@@ -17,6 +17,7 @@
  * - VDD (red wire): Connect to 3.3V or 5V
  * - GND (black wire): Connect to ground
  * - DATA (yellow/white wire): Connect to GPIO pin through a 4.7kΩ pullup resistor
+ * - diagram: https://i0.wp.com/randomnerdtutorials.com/wp-content/uploads/2019/06/ds18b20_esp32_single_normal.png?quality=100&strip=all&ssl=1
  *
  * The 4.7kΩ pullup resistor must be connected between the DATA line and VDD.
  *

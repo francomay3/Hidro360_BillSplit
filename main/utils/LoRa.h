@@ -394,6 +394,21 @@ public:
     printf("Initialization success!\n");
   }
 
+  /**
+   * @brief Sends a message via LoRa.
+   *
+   * Transmits the specified message using the SX1278 module.
+   * Prints transmission status to the console.
+   *
+   * Example:
+   * @code
+   * LoRaHandler loraHandler(GPIO_NUM_14, GPIO_NUM_15, GPIO_NUM_18, GPIO_NUM_23, GPIO_NUM_19, GPIO_NUM_26);
+   * const char* message = "Hello, LoRa!";
+   * loraHandler.send(message);
+   * @endcode
+   *
+   * @param message The message to be sent.
+   */
   void send(const char *message) const
   {
     printf("[SX1278] Transmitting packet ... ");
