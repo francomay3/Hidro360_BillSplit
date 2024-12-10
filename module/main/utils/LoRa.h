@@ -16,6 +16,7 @@
 #include "hal/gpio_hal.h"
 #include "esp_timer.h"
 #include "esp_log.h"
+#include "config.h"
 
 // define Arduino-style macros
 #define LOW (0x0)
@@ -386,6 +387,8 @@ public:
     radio = std::make_unique<SX1278>(new Module(hal.get(), nss_pin, dio0_pin, rst_pin));
 
     int state = radio->begin();
+    // TODO: remove the previous line and uncomment the following line after testing
+    // int state = radio->begin(LORA_FREQUENCY, LORA_BANDWIDTH, LORA_SPREADING_FACTOR, LORA_CODING_RATE, (uint8_t)LORA_SYNC_WORD, LORA_OUTPUT_POWER, LORA_PREAMBLE_LENGTH, LORA_GAIN);
     if (state != RADIOLIB_ERR_NONE)
     {
       printf("Initialization failed, code %d\n", state);

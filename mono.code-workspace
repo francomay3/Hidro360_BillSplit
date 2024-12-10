@@ -1,0 +1,17 @@
+{
+  "folders": [
+    {
+      "path": "./module"
+    },
+    {
+      "path": "./gateway"
+    },
+    {
+      "path": "./"
+    }
+  ],
+  "settings": {
+    "idf.port": "/dev/ttyUSB1",
+    "idf.espIdfPath": "${env:HOME}/esp/esp-idf"
+  }
+}
