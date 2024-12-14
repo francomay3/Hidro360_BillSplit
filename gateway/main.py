@@ -4,20 +4,19 @@ import threading
 from lora_receiver import start_lora_receiver
 from rs485_receiver import start_rs485_receiver
 
-if __name__ == "__main__":
-    print("Starting services...")
-    
-    try:
-        # Create and start threads for each service
-        lora_thread = threading.Thread(target=start_lora_receiver, daemon=True)
-        rs485_thread = threading.Thread(target=start_rs485_receiver, daemon=True)
+print("Starting services...")
 
-        lora_thread.start()
-        rs485_thread.start()
+try:
+    # Create and start threads for each service
+    lora_thread = threading.Thread(target=start_lora_receiver, daemon=True)
+    rs485_thread = threading.Thread(target=start_rs485_receiver, daemon=True)
 
-        # Keep the main thread alive while services run
-        while True:
-            pass
+    lora_thread.start()
+    rs485_thread.start()
 
-    except KeyboardInterrupt:
-        print("Services stopped.")
+    # Keep the main thread alive while services run
+    while True:
+        pass
+
+except KeyboardInterrupt:
+    print("Services stopped.")

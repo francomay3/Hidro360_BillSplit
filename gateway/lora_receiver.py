@@ -2,6 +2,15 @@ import os
 from LoRaRF import SX127x, LoRaSpi, LoRaGpio
 from handle_data import handle_data
 
+# Semtech SX127x Raspberry Pi default pins
+
+# SCK => GPIO 11
+# MISO => GPIO 9
+# MOSI => GPIO 10
+# NSS => GPIO 8
+# RESET => GPIO 22
+# BUSY => GPIO 23
+
 # Configuration parameters
 LORA_FREQUENCY = 434.0e6       # 434 MHz in Hz
 LORA_BANDWIDTH = 125000        # 125 kHz
@@ -13,7 +22,7 @@ LORA_GAIN = 0                  # We'll use automatic gain if possible
 
 def start_lora_receiver():
     # Initialize SPI and GPIO for LoRa module
-    spi = LoRaSpi(busId=0, csId=0)      # SPI0 with CS0
+    spi = LoRaSpi(0, 0)                 # SPI0 with CS0
     cs = LoRaGpio(0, 8)                 # GPIO 8 for chip select
     reset = LoRaGpio(0, 24)             # GPIO 24 for reset
     LoRa = SX127x(spi, cs, reset)
