@@ -4,12 +4,12 @@ from handle_data import handle_data
 
 # Semtech SX127x Raspberry Pi default pins
 
-# SCK => GPIO 11
-# MISO => GPIO 9
-# MOSI => GPIO 10
-# NSS => GPIO 8
-# RESET => GPIO 22
-# BUSY => GPIO 23
+# MISO => GPIO 9 gris
+# Io0 => GPIO 23 violeta
+# SCK => GPIO 11 azul
+# MOSI => GPIO 10 verde
+# RST => GPIO 22 amarillo
+# NSS => GPIO 8 naranja
 
 # Configuration parameters
 LORA_FREQUENCY = 434.0e6       # 434 MHz in Hz
